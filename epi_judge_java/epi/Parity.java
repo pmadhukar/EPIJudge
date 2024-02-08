@@ -20,3 +20,15 @@ public class Parity {
             .ordinal());
   }
 }
+
+class ParityExplained {
+  public static long parity (long x) {
+    long result = 0;
+    while (x != 0) {
+      long lastBit = x & 1; // Get last bit of x.
+      result = result ^ lastBit; // Count the number of 1s seen yet. Value will be 0 if number of 1s is even, otherwise 1.
+      x = x >>> 1;
+    }
+    return result;
+  }
+}
